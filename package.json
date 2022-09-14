@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "npm run build:demo --watch & npm run serve",
     "serve": "wds --node-resolve -w",
-    "build:sass": "wireit",
     "build:postcss": "wireit",
-    "build:open-props": "wireit",
     "build:ts": "wireit",
     "build:demo": "wireit",
     "build:demo:watch": "npm run build:demo -- --watch",
@@ -16,18 +14,6 @@
     "clean": "rm -rf ./.wireit && rm .tsbuildinfo"
   },
   "wireit": {
-    "build:sass": {
-      "dependencies": [
-        "build:open-props"
-      ],
-      "command": "node ./scripts/sass.cjs",
-      "files": [
-        "./src/components/**/*.scss"
-      ],
-      "output": [
-        "./src/components/**/styles.ts"
-      ]
-    },
     "build:postcss": {
       "command": "zx ./scripts/build-postcss.mjs",
       "files": [
@@ -35,15 +21,6 @@
       ],
       "output": [
         "./src/components/**/*.css.ts"
-      ]
-    },
-    "build:open-props": {
-      "command": "node ./scripts/convert-open-props.cjs && mkdir -p src/open-props && mv node_modules/open-props/*.ts src/open-props",
-      "files": [
-        "./node_modules/open-props/**/*.shadow.min.css"
-      ],
-      "output": [
-        "./src/open-props/**/styles.ts"
       ]
     },
     "build:ts": {

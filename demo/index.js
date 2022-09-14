@@ -1,8 +1,8 @@
 import 'api-viewer-element';
-import '../components/components/button/text-button.js';
-import '../components/components/button/filled-button.js';
-import '../components/components/button/toggle-button.js';
-import '../components/components/checkbox/checkbox.js';
+import '../components/button/text-button.js';
+import '../components/button/filled-button.js';
+import '../components/button/toggle-button.js';
+import '../components/checkbox/checkbox.js';
 import 'dark-mode-toggle';
 
 const darkModeToggle = document.querySelector('dark-mode-toggle');
