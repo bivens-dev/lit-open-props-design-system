@@ -1,0 +1,135 @@
+{
+  "name": "lit-starter-design-system-maximal",
+  "version": "1.0.0",
+  "description": "A Maximal Lit Design System starter kit",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build:demo --watch & npm run serve",
+    "serve": "wds --node-resolve -w",
+    "build:sass": "wireit",
+    "build:postcss": "wireit",
+    "build:open-props": "wireit",
+    "build:ts": "wireit",
+    "build:demo": "wireit",
+    "compile:postcss": "wireit",
+    "build:demo:watch": "npm run build:demo -- --watch",
+    "test": "wireit",
+    "clean": "rm -rf ./.wireit && rm .tsbuildinfo"
+  },
+  "wireit": {
+    "build:sass": {
+      "dependencies": [
+        "build:open-props"
+      ],
+      "command": "node ./scripts/sass.cjs",
+      "files": [
+        "./src/components/**/*.scss"
+      ],
+      "output": [
+        "./src/components/**/styles.ts"
+      ]
+    },
+    "build:postcss": {
+      "command": "find ./src/components -name '*.module.pcss' -exec postcss --base src --dir src --ext css {} + && node ./scripts/convert-post.cjs && find ./src/components -name '*.module.css' -exec rm {} +",
+      "files": [
+        "./src/components/**/*.module.pcss"
+      ],
+      "output": [
+        "./src/components/**/*.css.ts"
+      ]
+    },
+    "build:open-props": {
+      "command": "node ./scripts/convert-open-props.cjs && mkdir -p src/open-props && mv node_modules/open-props/*.ts src/open-props",
+      "files": [
+        "./node_modules/open-props/**/*.shadow.min.css"
+      ],
+      "output": [
+        "./src/open-props/**/styles.ts"
+      ]
+    },
+    "compile:postcss": {
+      "command": "find ./src/components -name '*.module.pcss' -exec postcss --base src --dir src --ext css {} +",
+      "files": [
+        "./src/components/**/*.module.pcss"
+      ],
+      "output": [
+        "./src/components/**/*.module.css"
+      ]
+    },
+    "build:ts": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "dependencies": [
+        "build:postcss"
+      ],
+      "files": [
+        "./src/**/*.ts",
+        "tsconfig.json",
+        ".tsbuildinfo"
+      ],
+      "output": [
+        "./components/**"
+      ]
+    },
+    "build:demo": {
+      "command": "cem analyze --litelement --globs src/components/**/*.ts src/components/*/lib/**/*.ts",
+      "dependencies": [
+        "build:ts"
+      ],
+      "files": [
+        "src/components/components/**/*.js",
+        "src/components/*/lib/**/*.js"
+      ],
+      "output": [
+        "./custom-elements.json"
+      ]
+    },
+    "test": {
+      "command": "wtr",
+      "files": [
+        "components/**/*"
+      ],
+      "dependencies": [
+        "build:ts"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lit/lit-starter-element-maximal.git"
+  },
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "javascript",
+    "lit"
+  ],
+  "author": "Google LLC",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/lit/lit-starter-element-maximal/issues"
+  },
+  "homepage": "https://github.com/lit/lit-starter-element-maximal#readme",
+  "dependencies": {
+    "lit": "^2.2.6",
+    "open-props": "^1.4.14"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.6.3",
+    "@open-wc/testing": "^3.1.6",
+    "@web/dev-server": "^0.1.32",
+    "@web/test-runner": "^0.13.31",
+    "@web/test-runner-playwright": "^0.8.9",
+    "api-viewer-element": "^1.0.0-pre.3",
+    "autoprefixer": "^10.4.10",
+    "dark-mode-toggle": "^0.10.0",
+    "fast-glob": "^3.2.11",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "postcss-jit-props": "^1.0.7",
+    "postcss-preset-env": "^7.8.1",
+    "sass": "^1.53.0",
+    "typescript": "^4.3.5",
+    "wireit": "^0.7.1"
+  }
+}

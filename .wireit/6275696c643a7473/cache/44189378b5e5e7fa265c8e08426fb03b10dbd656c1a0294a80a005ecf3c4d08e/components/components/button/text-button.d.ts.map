@@ -1,0 +1,1 @@
+{"version":3,"file":"text-button.d.ts","sourceRoot":"","sources":["../../../src/components/button/text-button.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,EAAC,MAAM,EAAC,MAAM,iBAAiB,CAAC;AAIvC;;;;;;;;;;;;;;;;;;;;;GAqBG;AACH,qBAAa,UAAW,SAAQ,MAAM;IACpC,OAAgB,MAAM,4DAA0B;CACjD;AAMD,OAAO,CAAC,MAAM,CAAC;IACb,UAAU,qBAAqB;QAC7B,gBAAgB,EAAE,UAAU,CAAC;KAC9B;CACF"}
