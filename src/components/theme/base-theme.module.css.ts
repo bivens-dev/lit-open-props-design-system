@@ -2,7 +2,7 @@ import {css} from 'lit';
 
 export const styles = css`
 
-:root {
+:host {
   --font-lineheight-1: 1.25;
   --font-weight-9: 900;
   --font-size-8: 3.5rem;
@@ -563,19 +563,19 @@ export const styles = css`
     color: var(--orange-6);
 }
 @media (color-index: 48) {
-  :root {
+  :host {
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
   }
 }
 @media (color: 48842621) {
-  :root {
+  :host {
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
   }
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :host {
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
   }

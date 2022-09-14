@@ -6,7 +6,10 @@ const postcssImport     = require('postcss-import');
 module.exports = {
   plugins: [
     postcssImport(),
-    postcssjitprops(OpenProps),
+    postcssjitprops({
+      ...OpenProps,
+      custom_selector: ':host'
+    }),
     postcssPresetEnv({
       stage: 2,
       autoprefixer: true,

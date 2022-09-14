@@ -1,7 +1,7 @@
 import {css} from 'lit';
 
 export const styles = css`
-:root {
+:host {
     --yellow-6: #fab005;
     --size-3: 1rem;
     --border-size-1: 1px;
