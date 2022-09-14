@@ -2,17 +2,8 @@ import {css} from 'lit';
 
 export const styles = css`
 :host {
-    --yellow-6: #fab005;
-    --size-3: 1rem;
-    --border-size-1: 1px;
-    --yellow-1: #fff3bf;
-    --radius-round: 1e5px;
-    --orange-2: #ffd8a8;
-    --orange-6: #fd7e14;
-}
-
-:host {
     background: var(--yellow-6);
+    --yellow-6: #fab005;
 }
 
 .yellow-badge {

@@ -2,91 +2,6 @@ import {css} from 'lit';
 
 export const styles = css`
 
-:host {
-  --font-lineheight-1: 1.25;
-  --font-weight-9: 900;
-  --font-size-8: 3.5rem;
-  --size-header-1: 20ch;
-  --font-size-6: 2.5rem;
-  --size-header-2: 25ch;
-  --font-size-5: 2rem;
-  --font-size-4: 1.5rem;
-  --font-size-3: 1.25rem;
-  --size-header-3: 35ch;
-  --font-size-2: 1.1rem;
-  --size-2: .5rem;
-  --size-1: .25rem;
-  --size-3: 1rem;
-  --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
-  --radius-2: 5px;
-  --border-size-1: 1px;
-  --size-8: 3rem;
-  --size-content-2: 45ch;
-  --size-content-3: 60ch;
-  --font-weight-7: 700;
-  --size-5: 1.5rem;
-  --font-size-0: .75rem;
-  --size-content-1: 20ch;
-  --size-fluid-5: max(4rem, min(5vw, 5rem));
-  --border-size-2: 2px;
-  --border-size-3: 5px;
-  --size-4: 1.25rem;
-  --red-9: #c92a2a;
-  --red-2: #ffc9c9;
-  --green-9: #2b8a3e;
-  --green-1: #d3f9d8;
-  --blue-5: #339af0;
-  --yellow-6: #fab005;
-  --indigo-7: #4263eb;
-  --grape-7: #ae3ec9;
-  --gray-9: #212529;
-  --gray-7: #495057;
-  --gray-0: #f8f9fa;
-  --gray-2: #e9ecef;
-  --gray-3: #dee2e6;
-  --gray-4: #ced4da;
-  --indigo-3: #91a7ff;
-  --grape-3: #e599f7;
-  --gray-1: #f1f3f5;
-  --gray-8: #343a40;
-  --gray-6: #868e96;
-  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-  --font-lineheight-3: 1.5;
-  --ease-2: cubic-bezier(.25, 0, .4, 1);
-  --indigo-2: #bac8ff;
-  --grape-2: #eebefa;
-  --size-10: 5rem;
-  --font-size-1: 1rem;
-  --radius-3: 1rem;
-  --shadow-6: 
-    0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
-    0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
-    0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
-    0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
-    0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
-    0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
-  --yellow-4: #ffd43b;
-  --radius-round: 1e5px;
-  --orange-2: #ffd8a8;
-  --orange-6: #fd7e14;
-  --shadow-color: 220 3% 15%;
-  --shadow-strength: 1%;
-}
-:where(html) {
-  color-scheme: light;
-
-  --link: var(--indigo-7);
-  --link-visited: var(--grape-7);
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
-
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-2);
-  --surface-3: var(--gray-3);
-  --surface-4: var(--gray-4);
-}
 @media (dynamic-range: high) {
     @supports (color(display-p3 0 .5 1)) {
 :where(html) {
@@ -146,6 +61,27 @@ export const styles = css`
 :where(html) { 
   color: var(--text-2);
   background-color: var(--surface-1);
+  color-scheme: light;
+
+  --link: var(--indigo-7);
+  --link-visited: var(--grape-7);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+  --scrollthumb-color: var(--gray-6);
+
+  scrollbar-color: var(--scrollthumb-color) transparent;
+  accent-color: var(--link);
+  caret-color: var(--link);
+  height: 100%;
+  font-family: var(--font-sans);
+  line-height: var(--font-lineheight-3);
+  -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 }
 :where(h1, h2, h3, h4, h5, h6, dt) { 
   color: var(--text-1);
@@ -161,13 +97,6 @@ export const styles = css`
 }
 :focus-visible { 
   outline-color: var(--link); 
-}
-:where(html) {
-  --scrollthumb-color: var(--gray-6);
-
-  scrollbar-color: var(--scrollthumb-color) transparent;
-  accent-color: var(--link);
-  caret-color: var(--link);
 }
 @media (color-index: 70) {
 :where(html) {
@@ -193,12 +122,6 @@ export const styles = css`
   border-style: solid;
   background-origin: border-box;
   background-repeat: no-repeat;
-}
-:where(html) {
-  height: 100%;
-  font-family: var(--font-sans);
-  line-height: var(--font-lineheight-3);
-  -webkit-text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 }
 @media (prefers-reduced-motion: no-preference) {
 :where(html) {
@@ -322,32 +245,24 @@ export const styles = css`
 @media (color-index: 48) {
 :where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
     background-color: hsl(210, 11%, 10%);
+    background-color: hsl(210, 11%, 10%);
+    background-color: hsl(210, 11%, 10%);
 }
   }
 @media (color: 48842621) {
 :where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
+    background-color: hsl(210, 11%, 10%);
+    background-color: hsl(210, 11%, 10%);
     background-color: hsl(210, 11%, 10%);
 }
   }
 @media (color-index: 48) {
-:where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
-    background-color: hsl(210, 11%, 10%);
-}
   }
 @media (color: 48842621) {
-:where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
-    background-color: hsl(210, 11%, 10%);
-}
   }
 @media (color-index: 48) {
-:where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
-    background-color: hsl(210, 11%, 10%);
-}
   }
 @media (color: 48842621) {
-:where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
-    background-color: hsl(210, 11%, 10%);
-}
   }
 @media (prefers-color-scheme: dark) {
 :where(textarea, select, input:not(button):not(button[type]):not(input[type="button"]):not(input[type="submit"]):not(input[type="reset"])) {
@@ -470,14 +385,10 @@ export const styles = css`
 }
 [dir="ltr"] :where(details[open] > summary) {
   border-bottom-left-radius: 0;
-}
-[dir="rtl"] :where(details[open] > summary) {
-  border-bottom-right-radius: 0;
-}
-[dir="ltr"] :where(details[open] > summary) {
   border-bottom-right-radius: 0;
 }
 [dir="rtl"] :where(details[open] > summary) {
+  border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 :where(details[open] > summary) {
@@ -549,6 +460,40 @@ export const styles = css`
 }
 :host {
     background: var(--yellow-6);
+    --font-lineheight-1: 1.25;
+    --font-weight-9: 900;
+    --font-size-8: 3.5rem;
+    --size-header-1: 20ch;
+    --font-size-6: 2.5rem;
+    --size-header-2: 25ch;
+    --font-size-5: 2rem;
+    --font-size-4: 1.5rem;
+    --font-size-3: 1.25rem;
+    --size-header-3: 35ch;
+    --font-size-2: 1.1rem;
+    --size-2: .5rem;
+    --size-1: .25rem;
+    --size-3: 1rem;
+    --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+    --radius-2: 5px;
+    --border-size-1: 1px;
+    --size-8: 3rem;
+    --size-content-2: 45ch;
+    --size-content-3: 60ch;
+    --font-weight-7: 700;
+    --size-5: 1.5rem;
+    --font-size-0: .75rem;
+    --size-content-1: 20ch;
+    --size-fluid-5: max(4rem, min(5vw, 5rem));
+    --border-size-2: 2px;
+    --border-size-3: 5px;
+    --size-4: 1.25rem;
+    --red-9: #c92a2a;
+    --red-2: #ffc9c9;
+    --green-9: #2b8a3e;
+    --green-1: #d3f9d8;
+    --blue-5: #339af0;
+    --yellow-6: #fab005;
 }
 .yellow-badge {
   padding-left: var(--size-1);
@@ -561,23 +506,5 @@ export const styles = css`
 [data-theme="light"] .yellow-badge {
     border-color: var(--orange-2);
     color: var(--orange-6);
-}
-@media (color-index: 48) {
-  :host {
-    --shadow-color: 220 40% 2%;
-    --shadow-strength: 25%;
-  }
-}
-@media (color: 48842621) {
-  :host {
-    --shadow-color: 220 40% 2%;
-    --shadow-strength: 25%;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :host {
-    --shadow-color: 220 40% 2%;
-    --shadow-strength: 25%;
-  }
 }
 `;
