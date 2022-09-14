@@ -4,3 +4,4 @@ custom-elements.json
 /components
 *.styles.ts
 .wireit
+.tsbuildinfo
