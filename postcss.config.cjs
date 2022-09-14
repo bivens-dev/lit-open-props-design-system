@@ -1,9 +1,11 @@
 const postcssjitprops = require('postcss-jit-props');
 const OpenProps = require('open-props');
 const postcssPresetEnv = require('postcss-preset-env');
+const postcssImport     = require('postcss-import');
 
 module.exports = {
   plugins: [
+    postcssImport(),
     postcssjitprops(OpenProps),
     postcssPresetEnv({
       stage: 2,
