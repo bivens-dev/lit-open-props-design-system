@@ -11,7 +11,6 @@
     "build:open-props": "wireit",
     "build:ts": "wireit",
     "build:demo": "wireit",
-    "compile:postcss": "wireit",
     "build:demo:watch": "npm run build:demo -- --watch",
     "test": "wireit",
     "clean": "rm -rf ./.wireit && rm .tsbuildinfo"
@@ -30,9 +29,9 @@
       ]
     },
     "build:postcss": {
-      "command": "find ./src/components -name '*.module.pcss' -exec postcss --base src --dir src --ext css {} + && node ./scripts/convert-post.cjs && find ./src/components -name '*.module.css' -exec rm {} +",
+      "command": "zx ./scripts/build-postcss.mjs",
       "files": [
-        "./src/components/**/*.module.pcss"
+        "./src/components/**/*.pcss"
       ],
       "output": [
         "./src/components/**/*.css.ts"
@@ -45,15 +44,6 @@
       ],
       "output": [
         "./src/open-props/**/styles.ts"
-      ]
-    },
-    "compile:postcss": {
-      "command": "find ./src/components -name '*.module.pcss' -exec postcss --base src --dir src --ext css {} +",
-      "files": [
-        "./src/components/**/*.module.pcss"
-      ],
-      "output": [
-        "./src/components/**/*.module.css"
       ]
     },
     "build:ts": {
@@ -130,6 +120,7 @@
     "postcss-preset-env": "^7.8.1",
     "sass": "^1.53.0",
     "typescript": "^4.3.5",
-    "wireit": "^0.7.1"
+    "wireit": "^0.7.1",
+    "zx": "^7.0.8"
   }
 }

@@ -3,3 +3,4 @@ custom-elements.json
 /lib
 /components
 *.styles.ts
+.wireit
